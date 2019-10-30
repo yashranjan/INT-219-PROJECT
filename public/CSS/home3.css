@@ -1,0 +1,166 @@
+body{
+    background-color: transparent; 
+}
+
+
+
+/*Navigation*/
+
+nav{
+    font-family: 'Rancho';
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*Search*/
+#search{
+    display: flex;
+    margin-top: 65px;
+    
+}
+.container-fluid{
+    background: url('https://imgur.com/yZCEe1x.jpg') no-repeat center center;
+    background-size: cover;
+}
+h1{
+    color: aliceblue;
+}
+#search input{
+    
+}
+
+
+
+
+/*Restaurants*/
+#Restaurants{
+    
+   
+}
+#Restaurants h2{
+    font-family: 'Acme';
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+/*food*/
+#food .container{
+   margin-top: 60px;
+   padding: 10px;
+   
+}
+#food h3{
+    margin-top: 20px;
+    border: 1px black;
+    border-bottom-style: groove;
+    background-color: papayawhip;
+    opacity: 0.8;
+    font-size: 2.5em;
+}
+
+
+/*Cuisines*/
+.cuisines{
+    margin-top: 20px;
+    background-color: transparent;
+    opacity: 0.5;
+}
+
+.cuisines li{
+        list-style-type: none;
+}
+.cuisines li a{
+    text-decoration: none;
+}
+.cuisines li a:hover{
+    color: black;
+    font-size: 1.5em;
+    transition-duration: 0.6s;
+}
+
+/*cards*/
+.card{
+    box-shadow: 0px 0px 0 0;
+    background-color: floralwhite;
+}
+.card:hover{
+    box-shadow: 4px 4px 0 0 lightgray;
+    transition-duration: 1s;
+}
+
+.card:focus{
+    box-shadow: 2px 2px 0 0;
+}
+
+/*foot*/
+#footer{
+    background-color: black;
+    padding: 30px;
+}
+#footer .c1{
+    background-color: black !important;
+}
+#footer .fa{
+    font-size: 70px;
+    color: azure;
+}
+#footer ul{
+   text-align: center;
+}
+#footer li{
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 20px;
+}
+#footer a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.fa-star{
+    color: gold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

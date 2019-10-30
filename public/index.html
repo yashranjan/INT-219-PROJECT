@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Foodie</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta
+      name="google-signin-client_id"
+      content="440600131400-t4b47lk4g227mhvj7ksfldceqlh39oeo.apps.googleusercontent.com"
+    />
+    <link rel="apple-touch-icon" href="" />
+    <link rel="shortcut icon" href="https://imgur.com/bAuqbsZ.png" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Architects+Daughter"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rancho"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Boogaloo"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Acme"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="./CSS/home3.css" />
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="./Javascript/home3.js"></script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.2.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.2.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.2.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.2.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.2.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    </style>
+  </head>
+  <body>
+      <nav
+        class="navbar navbar-expand-md navbar-dark bg-danger fixed-top"
+        id="navigation"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"
+            ><img src="https://imgur.com/omG2a7R.png" height="40px" /> Foodie</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarresponse"
+            aria-controls="navbarresponse"
+            aria-expanded="false"
+            aria-label="toggle-navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarresponse">
+            <ul class="navbar-nav mr-auto">
+              <a class="nav-link home" href="./index.html">Home</a>
+              <a class="nav-link about" href="./Html/About.html">About</a>
+              <a class="nav-link contact" href="#footer">Contact</a>
+  
+              <div class="dropdown">
+                <button
+                  class="btn dropdown-toggle"
+                  type="button"
+                  data-toggle="dropdown"
+                >
+                  Food Services <span class="caret text-center"></span>
+                </button>
+                <ul class="dropdown-menu text-center">
+                  <a href="#MakeOrder" style="text-decoration: none">My Orders</a
+                  ><br />
+                  <a href="#Track" style="text-decoration: none">Track Orders</a
+                  ><br />
+                  <a href="#Special" style="text-decoration: none"
+                    >Today's Special</a
+                  >
+                </ul>
+              </div>
+            </ul>
+  
+            <ul class="navbar-nav ml-auto">
+              <img
+                class="img"
+                src="https://imgur.com/Z7AjjUn.png"
+                style="cursor:pointer;"
+                data-toggle="modal"
+                data-target="#offers"
+                title="Offers"
+                height="40px"
+                width="40px"
+                href="#offers"
+              />
+              &nbsp;
+              <a
+                class="btn btn-info"
+                href="#Login"
+                data-toggle="modal"
+                data-target="#login"
+                >Login</a
+              >
+              &nbsp;
+              <a
+                class="btn btn-secondary"
+                href="#SignUp"
+                data-toggle="modal"
+                data-target="#signup"
+                >Sign Up</a
+              >
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+      <section id="search">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <center><h1 class="display-1">LIVE LOVE EAT!</h1></center>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 ">
+              <form method="get" action="city.php">
+                <input
+                  list="city"
+                  name="city1"
+                  type="search"
+                  class="form-control text-center"
+                  placeholder="Enter City name"
+                />
+                <datalist id="city">
+                  <option value="Agra"> </option>
+                  <option value="Ahmedabad"> </option>
+                  <option value="Alappuzha"> </option>
+                  <option value="Alwar"> </option>
+                  <option value="Amritsar"> </option>
+                  <option value="Aurangabad"> </option>
+                  <option value="Bangalore"> </option>
+                  <option value="Bharatpur"> </option>
+                  <option value="Bhavnagar"> </option>
+                  <option value="Bikarner"> </option>
+                  <option value="Bhopal"> </option>
+                  <option value="Bhubaneshwar"> </option>
+                  <option value="Bodh Gaya"> </option>
+                  <option value="Calangute"> </option>
+                  <option value="Chandigarh"> </option>
+                  <option value="Chennai"> </option>
+                  <option value="Chittaurgarh"> </option>
+                  <option value="Coimbatore"> </option>
+                  <option value="Cuttack"> </option>
+                  <option value="Dalhousie"> </option>
+                  <option value="Dehradun"> </option>
+                  <option value="Delhi"> </option>
+                  <option value="Ernakulam"> </option>
+                  <option value="Faridabad"> </option>
+                  <option value="Gaya"> </option>
+                  <option value="Gangtok"> </option>
+                  <option value="Ghaziabad"> </option>
+                  <option value="Gurgaon"> </option>
+                  <option value="Guwahati"> </option>
+                  <option value="Gwalior"> </option>
+                  <option value="Haridwar"> </option>
+                  <option value="Hyderabad"> </option>
+                  <option value="Imphal"> </option>
+                  <option value="Indore"> </option>
+                  <option value="Jabalpur"> </option>
+                  <option value="Jaipur"> </option>
+                  <option value="Jaisalmer"> </option>
+                  <option value="Jalandhar"> </option>
+                  <option value="Jamshedpur"> </option>
+                  <option value="Jodhpur"> </option>
+                  <option value="Junagadh"> </option>
+                  <option value="Kanpur"> </option>
+                  <option value="Kanyakumari"> </option>
+                  <option value="Khandala"> </option>
+                  <option value="Kochi"> </option>
+                  <option value="Kodaikanai"> </option>
+                  <option value="Kolkata"> </option>
+                  <option value="Kota"> </option>
+                  <option value="Kottayam"> </option>
+                  <option value="Kovalam"> </option>
+                  <option value="Lucknow"> </option>
+                  <option value="Ludhiana"> </option>
+                  <option value="Madurai"> </option>
+                  <option value="Manali"> </option>
+                  <option value="Mangalore"> </option>
+                  <option value="Margao"> </option>
+                  <option value="Mathura"> </option>
+                  <option value="Mountabu"> </option>
+                  <option value="Mumbai"> </option>
+                  <option value="Mussoorie"> </option>
+                  <option value="Mysore"> </option>
+                  <option value="Nagpur"> </option>
+                  <option value="Nainital"> </option>
+                  <option value="Noida"> </option>
+                  <option value="Ooty"> </option>
+                  <option value="Panaji"> </option>
+                  <option value="Patna"> </option>
+                  <option value="Pondicherry"> </option>
+                  <option value="Porbandar"> </option>
+                  <option value="Pune"> </option>
+                  <option value="Puri"> </option>
+                  <option value="Pushkar"> </option>
+                  <option value="Rajkot"> </option>
+                  <option value="Rameshwaram"> </option>
+                  <option value="Ranchi"> </option>
+                  <option value="Sanchi"> </option>
+                  <option value="Secunderabad"> </option>
+                  <option value="Shimla"> </option>
+                  <option value="Surat"> </option>
+                  <option value="Thanjavur"> </option>
+                  <option value="Thiruchchirapali"> </option>
+                  <option value="Thrissur"> </option>
+                  <option value="Tirumala"> </option>
+                  <option value="Udaipur"> </option>
+                  <option value="Vadodara"> </option>
+                  <option value="Varanasi"> </option>
+                  <option value="Vijayawada"> </option>
+                  <option value="Vishakapatnam"> </option>
+                </datalist>
+              </form>
+            </div>
+          </div>
+  
+          <br />
+  
+          <div class="row">
+            <div class="col-12">
+              <center>
+                <button type="button" class="btn btn-primary">Find</button>
+              </center>
+            </div>
+          </div>
+          <br /><br />
+        </div>
+      </section>
+  
+      <hr style="background: lightgray ; width: 80%" />
+  
+      <section id="Restaurants">
+        <div class="row">
+          <div class="col-12">
+            <center><h2 class="">Top Restaurants</h2></center>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-sm-6 col-xs-12 col-md-6 col-lg-3 ">
+            <a
+              href="./Html/ViewRestaurant.html"
+              style="text-decoration: none; color: black;"
+            >
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="https://imgur.com/vlVCzA2.jpg"
+                  alt="Card image"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">Barbequee Nation</h4>
+                  <p class="card-text">Location : Jalandhar, Punjab</p>
+                  <p>Veg, Non-Veg, Kebab, Punjabi, and more</p>
+                  <a href="./Html/ViewRestaurant.html" class="btn btn-primary"
+                    >View</a
+                  >
+                  &nbsp;&nbsp; <span class="fa fa-star">Rating : 4/5</span>
+                </div>
+              </div></a
+            >
+          </div>
+  
+          <div class="col-sm-6 col-xs-12 col-md-6 col-lg-3 ">
+            <a
+              href="./Html/ViewRestaurant.html"
+              style="text-decoration: none; color: black;"
+            >
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="https://imgur.com/7ZJMGaf.jpg"
+                  alt="Card image"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">Shagun Restaurant</h4>
+                  <p class="card-text">Location : Zira, Punjab</p>
+                  <p>Veg, Non-Veg, South Indian, Gujarati, and more</p>
+                  <a href="./Html/ViewRestaurant.html" class="btn btn-primary"
+                    >View</a
+                  >
+                  &nbsp;&nbsp;<span class="fa fa-star">Rating : 4.2/5</span>
+                </div>
+              </div></a
+            >
+          </div>
+  
+          <div class="col-sm-6 col-xs-12 col-md-6 col-lg-3 ">
+            <a
+              href="./Html/ViewRestaurant.html"
+              style="text-decoration: none; color: black;"
+            >
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="https://imgur.com/b6E2NQE.jpg"
+                  alt="Card image"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">Heat 7</h4>
+                  <p class="card-text">
+                    Location : New Jawahar Nagar Market, Punjab
+                  </p>
+                  <p>Veg, Non-Veg, and American</p>
+                  <a href="./Html/ViewRestaurant.html" class="btn btn-primary"
+                    >View</a
+                  >
+                  &nbsp;&nbsp; <span class="fa fa-star">Rating : 4.5/5</span>
+                </div>
+              </div></a
+            >
+          </div>
+  
+          <div class="col-sm-6 col-xs-12 col-md-6 col-lg-3 ">
+            <a
+              href="./Html/ViewRestaurant.html"
+              style="text-decoration: none; color: black;"
+            >
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="https://imgur.com/jqvm8Vn.jpg"
+                  alt="Card image"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">Zaika Restaurant</h4>
+                  <p class="card-text">Location : Jalandhar, Punjab</p>
+                  <p>Veg, Non-Veg, South Indian, Gujarati, more</p>
+                  <a href="./Html/ViewRestaurant.html" class="btn btn-primary"
+                    >View</a
+                  >
+                  &nbsp;&nbsp;<span class="fa fa-star">Rating : 3.9/5</span>
+                </div>
+              </div></a
+            >
+          </div>
+        </div>
+      </section>
+      <hr style="background: lightgray ; width: 80%" />
+      <section id="food">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+              <img
+                src="https://imgur.com/hTXL0YB.jpg"
+                class=" img-responsive img-rounded imgcuisines"
+                height="100%"
+                width="100%"
+              />
+            </div>
+  
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <center><h3>Cuisines</h3></center>
+              <div class="cuisines">
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <ul>
+                      <li><a href="#American">American</a></li>
+                      <li><a href="#Andhra">Andhra</a></li>
+                      <li><a href="#Arabic">Arabic</a></li>
+                      <li><a href="#Bengali">Bengali</a></li>
+                      <li><a href="#Biryani">Biryani</a></li>
+                      <li><a href="#Burgers">Burgers</a></li>
+                      <li><a href="#Cakes and Bakery">Cakes and Bakery</a></li>
+                      <li><a href="#Chinese">Chinese</a></li>
+                      <li><a href="#Continental">Continental</a></li>
+                      <li><a href="#Desserts">Desserts</a></li>
+                      <li><a href="#European">European</a></li>
+                      <li><a href="#FastFood">Fast Food</a></li>
+                      <li><a href="#Hyderabadi">Hyderabadi</a></li>
+                      <li><a href="#Ice Creams">Ice Creams</a></li>
+                      <li><a href="#Italian">Italians</a></li>
+                      <li><a href="#Japanese">Japanese</a></li>
+                      <li><a href="#Juice">Juices</a></li>
+                      <li><a href="#Kebab">Kebab</a></li>
+                      <li><a href="#Maharashtrian">Maharashtrian</a></li>
+                      <li><a href="#Mexican">Mexican</a></li>
+                      <li><a href="#MiddleEast">Middle Eastern</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <hr style="background: lightgray ; width: 80%" />
+  
+      <section id="modals">
+        <div
+          class="modal fade"
+          id="login"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal">Login</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="form" action="./index.html" autocomplete="on">
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    class="form-control"
+                    required
+                  /><br />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    class="form-control"
+                    required
+                  /><br />
+                  <button type="submit" class="btn btn-secondary">Login</button
+                  >&nbsp;&nbsp;&nbsp;<button
+                    type="button"
+                    data-toggle="modal"
+                    data-target="#signup"
+                    class="btn btn-danger"
+                  >
+                    Sign Up</button
+                  ><br /><br />
+                  <button type="button" class="btn btn-info btn-block">
+                    <span class="fa fa-facebook"
+                      >&nbsp; &nbsp;&nbsp;Login with Facebook</span
+                    >
+                  </button>
+                  <button type="button" class="btn btn-danger btn-block">
+                    <!-- <span class="fa fa-google g-signin2" data-onsuccess="onSignIn" 
+                    >&nbsp; &nbsp;&nbsp;Login with Google</span
+                  > -->
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div
+          class="modal fade"
+          id="signup"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form method="get" action="./Html/ViewRestaurant.html" autocomplete="on">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    class="form-control"
+                    required
+                  /><br />
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    class="form-control"
+                    required
+                  /><br />
+                  <div class="container row">
+                    <input
+                      type="number"
+                      placeholder=""
+                      value="91"
+                      class="form-control col-xs-2 col-sm-2 col-md-2"
+                      readonly
+                    />&nbsp;&nbsp;&nbsp;
+                    <input
+                      type="tel"
+                      placeholder="Phone number"
+                      class="form-control col-xs-8 col-sm-8 col-md-8"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="form-control"
+                    required
+                  /><br />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    class="form-control"
+                    required
+                  /><br />
+                  <input
+                    type="password"
+                    placeholder="Repeat Password"
+                    class="form-control"
+                    required
+                  /><br />
+                  <button type="submit" class="btn btn-warning btn-block">
+                    Sign Up</button
+                  ><a href="#">Already Registered ?</a><br />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div
+          class="modal fade"
+          id="offers"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center" id="exampleModalLabel">
+                  Offers and Deals
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <a
+                  href="https://www.dominos.co.in/great-deals/online-pizza-coupons/"
+                  ><img src="https://imgur.com/bHfjZUK.jpg" width="100%"
+                /></a>
+                <hr style="background: lightgray ; width: 80%" />
+                <a href=""><img src="https://imgur.com/VXfqZMI.jpg" width="100%"/></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section id="footer">
+        <div class="container-fluid1">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+              <center>
+                <a href="https://www.instagram.com"
+                  ><span class="fa fa-instagram"></span
+                ></a>
+              </center>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+              <center>
+                <a href="https://www.facebook.com"
+                  ><span class="fa fa-facebook"></span
+                ></a>
+              </center>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+              <center>
+                <a href="https://web.whatsapp.com"
+                  ><span class="fa fa-whatsapp"></span
+                ></a>
+              </center>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+              <center>
+                <a href="https://twitter.com/login?lang=en"
+                  ><span class="fa fa-twitter"></span
+                ></a>
+              </center>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-12">
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">&copy; Copyright 2019 Foodie</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script src="Javascript/home3.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        let app=firebase.app();
+      });
+    </script>
+  </body>
+</html>
